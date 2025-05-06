@@ -6,8 +6,11 @@ import {
   Connection,
   useNodesState,
   useEdgesState,
+  Background,
+  BackgroundVariant,
+  Controls,
 } from "@xyflow/react";
-import { Sidebar } from "./sidebar";
+import "@xyflow/react/dist/style.css";
 
 // Exemplo de nodes iniciais
 const initialNodes = [
@@ -28,17 +31,15 @@ export function FlowEditor() {
   );
 
   return (
-    <div className="flex h-screen">
-      <Sidebar />
-      <div className="flex-1 h-full">
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-        />
-      </div>
-    </div>
+    <ReactFlow
+      nodes={nodes}
+      edges={edges}
+      onNodesChange={onNodesChange}
+      onEdgesChange={onEdgesChange}
+      onConnect={onConnect}
+    >
+      <Background variant={BackgroundVariant.Cross} gap={12} size={1} />
+      <Controls />
+    </ReactFlow>
   );
 }
