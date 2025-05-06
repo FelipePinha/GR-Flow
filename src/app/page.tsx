@@ -1,5 +1,5 @@
 import { FlowEditor } from "./components/flow-editor";
-import { Sidebar } from "./components/sidebar";
+import { Sidebar } from "./components/sidebar/sidebar";
 
 export default function Home() {
   return (
