@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,12 +15,12 @@ export function CreateFlowDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button size="icon" variant="outline">
           <Plus />
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader className="mb-5">
+        <DialogHeader>
           <DialogTitle>Criar Novo Fluxo</DialogTitle>
         </DialogHeader>
         <CreateFlowForm />

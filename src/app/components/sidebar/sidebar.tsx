@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Zap, PlayCircle, GitBranch, Clock, Webhook } from "lucide-react";
 import { CreateFlow } from "./create-flow";
+import { SelectFlow } from "./select-flow";
 
 const sidebarButtons = [
   { id: "trigger", label: "Gatilho", icon: Zap },
@@ -13,7 +14,10 @@ const sidebarButtons = [
 export function Sidebar() {
   return (
     <aside className="w-64 p-4 border-r bg-muted">
-      <CreateFlow />
+      <div className="mb-10 space-y-4">
+        <CreateFlow />
+        <SelectFlow />
+      </div>
       <h2 className="font-bold mb-4">Componentes</h2>
       {sidebarButtons.map((button) => (
         <Button
