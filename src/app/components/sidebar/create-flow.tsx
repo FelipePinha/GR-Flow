@@ -22,8 +22,6 @@ export function CreateFlow() {
       throw new Error("Failed to create flow");
     }
 
-    console.log(response);
-
     revalidatePath("/flows");
   };
 
