@@ -9,9 +9,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Plus } from "lucide-react";
-import { CreateFlowForm } from "./create-flow-form";
+import { ReactNode } from "react";
 
-export function CreateFlowDialog() {
+export function CreateFlowDialog({ children }: { children: ReactNode }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -23,7 +23,7 @@ export function CreateFlowDialog() {
         <DialogHeader>
           <DialogTitle>Criar Novo Fluxo</DialogTitle>
         </DialogHeader>
-        <CreateFlowForm />
+        {children}
       </DialogContent>
     </Dialog>
   );

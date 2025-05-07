@@ -1,3 +1,5 @@
+"use client";
+
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,10 +13,15 @@ const createFlowSchema = z.object({
 
 type CreateFlowFormData = z.infer<typeof createFlowSchema>;
 
-export function CreateFlowForm() {
+interface CreateFlowFormProps {
+  createFlow: (name: string) => Promise<void>;
+}
+
+export function CreateFlowForm({ createFlow }: CreateFlowFormProps) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<CreateFlowFormData>({
     resolver: zodResolver(createFlowSchema),
@@ -25,8 +32,9 @@ export function CreateFlowForm() {
 
   const onSubmit = async (data: CreateFlowFormData) => {
     try {
-      // TODO: Implementar a chamada à API para criar o fluxo
-      console.log("Dados do formulário:", data);
+      await createFlow(data.name);
+      console.log("Fluxo criado com sucesso");
+      reset();
     } catch (error) {
       console.error("Erro ao criar fluxo:", error);
     }

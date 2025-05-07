@@ -32,7 +32,7 @@ interface FlowAttributes {
   createdAt: string;
   updatedAt: string;
   billing: string;
-  published: string | null;
+  published: string | boolean | null;
   uid: string;
   data: FlowData;
 }
