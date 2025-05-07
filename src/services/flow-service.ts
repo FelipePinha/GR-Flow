@@ -1,9 +1,11 @@
-import { api } from "@/lib/axios";
+export const getFlows = async () => {
+  const response = await fetch("https://api.xbase.app/api/flows", {
+    next: {
+      tags: ["flows"],
+    },
+  });
 
-export const getFlows = () => api.get("/flows");
+  const { data } = await response.json();
 
-export const getFlowById = (id: string) => api.get(`/flows/${id}`);
-
-export const createFlow = (data: any) => api.post("/flows", data);
-
-export const deleteFlow = (id: string) => api.delete(`/flows/${id}`);
+  return data;
+};
