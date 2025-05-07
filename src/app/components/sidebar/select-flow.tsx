@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -34,7 +34,7 @@ export function SelectFlow({ flows }: SelectFlowProps) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full"
+          className="w-full line-clamp-1 overflow-ellipsis"
         >
           {value
             ? flows.find((flow) => flow.attributes.name === value)?.attributes
