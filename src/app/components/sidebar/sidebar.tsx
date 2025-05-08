@@ -3,6 +3,7 @@ import { Zap, PlayCircle, GitBranch, Clock, Webhook } from "lucide-react";
 import { CreateFlow } from "./create-flow";
 import { SelectFlow } from "./select-flow";
 import { getFlows } from "@/services/flow-service";
+import { SidebarActions } from "./sidebar-actions";
 
 const sidebarButtons = [
   { id: "trigger", label: "Gatilho", icon: Zap },
@@ -23,14 +24,9 @@ export async function Sidebar() {
       </div>
       <h2 className="font-bold mb-4">Componentes</h2>
       {sidebarButtons.map((button) => (
-        <Button
-          key={button.id}
-          variant="outline"
-          className="w-full mb-2 justify-start gap-2"
-        >
+        <SidebarActions key={button.id} id={button.id} label={button.label}>
           <button.icon className="h-4 w-4" />
-          {button.label}
-        </Button>
+        </SidebarActions>
       ))}
     </aside>
   );
