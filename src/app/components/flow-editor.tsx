@@ -15,11 +15,6 @@ import {
 import "@xyflow/react/dist/style.css";
 import { useNodes } from "@/contexts/nodes-context";
 
-// Exemplo de nodes iniciais
-
-// Exemplo de edges iniciais
-// const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
-
 export function FlowEditor() {
   const { nodes, setNodes } = useNodes();
 
